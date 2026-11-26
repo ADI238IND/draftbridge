@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102723">
+  <meta name="description" content="DraftBridge tests how to help student applicants recover when a submission drops.">
+  <title>DraftBridge · Application Recovery Lab</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="shell">
+      <nav class="topbar" aria-label="Project">
+        <span class="brand"><span class="brand-mark" aria-hidden="true">↻</span> DraftBridge</span>
+        <a href="#study">Experiment design</a>
+      </nav>
+      <div class="intro">
+        <div>
+          <p class="eyebrow">APPLICATION RECOVERY LAB</p>
+          <h1>When the signal drops,<br><em>the draft stays.</em></h1>
+          <p>A student aid application, one interrupted send, and two ways to help an applicant finish.</p>
+        </div>
+        <div class="signal-art" aria-hidden="true">
+          <div class="grid-art"></div>
+          <div class="art-card"><span></span><span></span><span></span></div>
+          <div class="art-line"></div>
+          <div class="art-pin">✓</div>
+          <div class="art-note">DRAFT RETAINED</div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="workspace">
+      <section class="card applicant" aria-labelledby="form-title">
+        <div class="section-top">
+          <p class="eyebrow">APPLICANT VIEW</p>
+          <span class="status-pill" id="status-pill">Draft on this device</span>
+        </div>
+        <h2 id="form-title">Student travel grant</h2>
+        <p class="subtle">Practice application using fictional details.</p>
+        <ol class="steps" aria-label="Application steps">
+          <li><span aria-hidden="true">✓</span> Details</li>
+          <li><span aria-hidden="true">✓</span> Documents</li>
+          <li aria-current="step"><span aria-hidden="true">3</span> Review &amp; send</li>
+        </ol>
+        <div id="application">
+          <form id="application-form" autocomplete="off">
+            <label for="reason">Why are you applying?</label>
+            <textarea id="reason" name="reason" rows="3" required minlength="10" maxlength="280" spellcheck="false">The grant would help cover my bus fare to campus this semester.</textarea>
+            <div class="field-note"><span id="save-note" role="status">Draft saved on this device</span><span id="count"></span></div>
+            <div class="document">
+              <div class="file-mark" aria-hidden="true">▤</div>
+              <div><strong>Enrollment letter</strong><small>Sample document · Ready</small></div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="primary" id="send">Send application</button>
+            </div>
+          </form>
+          <div class="feedback hidden" id="feedback" role="region" aria-label="Submission status" tabindex="-1"></div>
+        </div>
+      </section>
+      <aside class="card lab" aria-labelledby="lab-title">
+        <div class="section-top">
+          <p class="eyebrow">TEST CONTROLS</p>
+          <span class="status-pill alt" id="mode-badge">Local preview</span>
+        </div>
+        <h2 id="lab-title">Experiment bench</h2>
+        <p class="subtle">Choose a screen and a failure, then send the sample application.</p>
+        <fieldset id="variant-controls">
+          <legend>Recovery screen</legend>
+          <div class="segmented">
+            <label><input name="variant" type="radio" value="control"><span><b>A</b> Standard</span></label>
+            <label><input name="variant" type="radio" value="recovery" checked><span><b>B</b> Guided</span></label>
+          </div>
+        </fieldset>
+        <label class="select-label" for="fault">On first send</label>
+        <select id="fault">
+          <option value="drop">Drop before arrival</option>
+          <option value="ack">Lose receipt after arrival</option>
+          <option value="none">Keep connection stable</option>
+        </select>
+        <div class="session"><span class="eyebrow">SESSION ACTIVITY</span><button type="button" class="text-button" id="reset">Reset demo</button></div>
+        <ol id="activity" class="activity" aria-label="Session activity"></ol>
+        <p class="hint" id="mode-note"></p>
+      </aside>
+    </div>
+    <section class="study" id="study" aria-labelledby="study-title">
+      <div><p class="eyebrow">THE EXPERIMENT</p><h2 id="study-title">Can more applicants recover?</h2></div>
+      <div class="study-copy">
+        <p>Both screens keep the same draft and use the same retry logic. The guided screen explains what was saved, where the send stands, and what to do next.</p>
+        <p><strong>Success:</strong> an applicant receives a confirmed demo receipt within two minutes of seeing an interruption. The experiment also tracks repeated retries and time to receipt.</p>
+        <a href="https://docs.flagsmith.com/experimentation/run-an-experiment">Flagsmith Experimentation documentation</a>
+      </div>
+    </section>
+  </main>
+  <footer class="shell">DraftBridge · Toggle Wars · Aditya Singhal</footer>
+  <script src="./config.js"></script>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>
