@@ -8,7 +8,7 @@ Toggle Wars · Track 01, **Test Something Real** · Aditya Singhal
 
 ## Try it
 
-[Watch the 55-second working demo](./DraftBridge_Demo.mp4).
+[Open the interactive demo](https://adi238ind.github.io/draftbridge/) · [Watch the 55-second walkthrough](./DraftBridge_Demo.mp4)
 
 Run the demo locally with Node.js 22+.
 
