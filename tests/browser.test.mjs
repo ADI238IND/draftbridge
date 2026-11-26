@@ -136,7 +136,7 @@ test("the real SDK delivers an exposure and conversion with the same ID to a tes
     payloads.push(route.request().postDataJSON());
     return route.fulfill({ status: 200, json: {} });
   });
-  await open(page);
+  await page.goto(new URL("?experiment=1", base).href);
   await page.getByText("Flagsmith connected", { exact: true }).waitFor();
   assert.equal(payloads.length, 0);
   await page.getByRole("button", { name: "Send application" }).click();

@@ -83,3 +83,11 @@ footer{color:var(--muted);font-size:.85rem;padding:0 0 23px}
 @media(max-width:860px){.intro{grid-template-columns:1fr 245px}.signal-art{height:151px}.art-card{left:26px;top:24px;width:84px;height:90px;padding:21px 12px}.art-line{left:110px;right:56px;top:68px}.art-pin{right:26px;top:35px;width:40px;height:40px}.card{padding:19px}.workspace{gap:13px}.segmented span{padding:7px;gap:4px}}
 @media(max-width:680px){.shell{width:calc(100% - 30px)}.intro,.workspace,.study{grid-template-columns:1fr}.intro{padding:28px 0 31px}.signal-art{display:none}.workspace{margin-top:14px}.study{gap:9px}.topbar{padding:12px 0}.topbar a{font-size:.83rem}}
 @media(max-width:355px){.card{padding:14px}.section-top{gap:4px}.status-pill{font-size:.69rem}.segmented span{white-space:normal}}
+
+.experiment-mode .workspace{max-width:840px;margin-inline:auto;grid-template-columns:minmax(0,1fr)}
+.experiment-mode .hero .intro{padding-block:28px;display:block}
+.experiment-mode .signal-art,.experiment-mode .topbar a,.experiment-mode .study,.experiment-mode .lab h2,.experiment-mode .lab .subtle,.experiment-mode .lab fieldset,.experiment-mode .lab .select-label,.experiment-mode .lab select,.experiment-mode .session,.experiment-mode .activity{display:none}
+.experiment-mode .lab{grid-row:1;padding-block:12px}
+.experiment-mode .lab .section-top{margin-bottom:0}
+.experiment-mode .lab .hint{margin-top:4px}
+.experiment-mode footer{padding-top:18px}

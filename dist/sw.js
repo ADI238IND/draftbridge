@@ -1,4 +1,4 @@
-const CACHE = "draftbridge-shell-v1";
+const CACHE = "draftbridge-shell-v2";
 const ROOT = new URL("./", self.location);
 const FILES = ["index.html", "styles.css", "config.js", "icon.svg", "app.mjs", "flow.mjs", "receipts.mjs", "flags.mjs", "vendor/flagsmith.mjs"];
 

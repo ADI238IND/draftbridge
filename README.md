@@ -46,10 +46,10 @@ The browser emits exposure at first display, not when loading flags. It emits a 
 2. Create the multivariate flag `draftbridge_recovery`. Enable it, use string value `control` for the base, and add a variation with key and value `recovery`. Configure the experiment to split the enabled flag 50/50 with 100% enrollment.
 3. Create an event-based unique-identity conversion metric with the exact event name `draftbridge_receipt_within_120s`. Set the expected direction to increase. Optionally register `draftbridge_time_to_receipt_ms` and `draftbridge_retries_to_receipt` as numeric event metrics.
 4. Set **only** the client-side environment key in [dist/config.js](dist/config.js). For self-hosting, also set the SDK flags API URL and event ingestion URL. Admin and server keys must remain out of the browser.
-5. Start the experiment. Open a new browser profile, wait for **Flagsmith connected**, send the sample application, and retry. Use a fresh profile for each synthetic identity. Verify in the Flagsmith dashboard that exposure and conversion share the same identity. The [official SDK guide](https://docs.flagsmith.com/experimentation/run-an-experiment) documents the exposure and flush behavior.
+5. Start the experiment. Open the configured app in a new browser profile with `?experiment=1`, wait for **Flagsmith connected**, send the sample application, and retry. Use a fresh profile for each synthetic identity. Verify in the Flagsmith dashboard that exposure and conversion share the same identity. The [official SDK guide](https://docs.flagsmith.com/experimentation/run-an-experiment) documents the exposure and flush behavior.
 6. Use a separate environment for synthetic traffic. Run the same browser script or task instructions on both variants. Review assignment balance, event delivery, and whether the uncertainty supports a rollout decision. Leave the experiment open if evidence is insufficient.
 
-Opening the app with `?demo=1` selects a separate preview session with manual variants and fault controls. No analytics leave the browser in that mode.
+Open the configured app with `?experiment=1` to join its Flagsmith experiment. The default URL opens a separate preview session with manual variant and fault controls. No analytics leave the browser in preview mode.
 
 ## Reproduce the checks
 

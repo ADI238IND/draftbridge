@@ -7,7 +7,8 @@ const field = $("reason");
 const form = $("application-form");
 const feedback = $("feedback");
 const config = globalThis.DRAFTBRIDGE_CONFIG;
-const preview = !config?.environmentKey || new URLSearchParams(location.search).get("demo") === "1";
+const preview = !config?.environmentKey || new URLSearchParams(location.search).get("experiment") !== "1";
+document.body.classList.toggle("experiment-mode", !preview);
 const storeKey = preview ? "draftbridge-preview-v1" : `draftbridge-experiment-${config.environmentKey}-v1`;
 const createId = () => crypto.randomUUID();
 let storageWorks = true;
@@ -121,7 +122,7 @@ function metric() {
 function refreshMode() {
   $("mode-badge").textContent = preview ? "Local preview" : client?.assignment() ? "Flagsmith connected" : loading ? "Connecting" : "Flagsmith unavailable";
   $("mode-note").textContent = preview ? "Events stay in this browser in preview mode."
-    : "Flagsmith assigns the recovery screen. Only pseudonymous experiment events are sent.";
+    : "Use fictional details. Draft text stays on this device. Flagsmith receives pseudonymous experiment events.";
 }
 
 function loadExperiment() {
