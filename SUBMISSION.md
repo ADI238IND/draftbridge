@@ -2,7 +2,8 @@
 
 **Entrant** Aditya Singhal  
 **Track** 01 · Test Something Real  
-**Repository** https://github.com/ADI238IND/draftbridge
+**Repository** https://github.com/ADI238IND/draftbridge  
+**Demo** https://github.com/ADI238IND/draftbridge/blob/main/DraftBridge_Demo.mp4
 
 A student presses Send on a travel-grant form. The network drops, and the portal can't say whether the service received it. DraftBridge compares a generic retry prompt with a guided recovery screen that confirms what has been saved, explains the uncertainty, and offers one action to find the original receipt or send safely. Both versions use the same offline draft and duplicate-safe receipt logic.
 

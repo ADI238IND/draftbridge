@@ -8,6 +8,8 @@ Toggle Wars · Track 01, **Test Something Real** · Aditya Singhal
 
 ## Try it
 
+[Watch the 55-second working demo](./DraftBridge_Demo.mp4).
+
 Run the demo locally with Node.js 22+.
 
 ```sh
@@ -58,7 +60,7 @@ npx playwright install chromium
 npm run test:browser
 ```
 
-Unit tests cover draft recovery, deduplication behavior, exposure attribution, and the conversion boundary. Browser tests drive both layouts, reload while offline, check keyboard and mobile behavior, and exercise the official Flagsmith SDK against a controlled endpoint that verifies the event payload. The product hypothesis needs participant data. Scripted recovery checks demonstrate functional behavior.
+All 12 unit checks and 9 Chromium checks passed on three consecutive runs. Unit tests cover draft recovery, deduplication behavior, exposure attribution, and the conversion boundary. Browser tests drive both layouts, reload while offline, check keyboard and mobile behavior, and exercise the official Flagsmith SDK against a controlled endpoint that verifies the event payload. The product hypothesis needs participant data. Scripted recovery checks demonstrate functional behavior.
 
 ## References
 
